@@ -2,8 +2,8 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class DateLapse {
-    LocalDate from;
-    LocalDate to;
+    private LocalDate from;
+    private LocalDate to;
 
     //Constructor
     public DateLapse (LocalDate inicio, LocalDate fin){
@@ -12,7 +12,6 @@ public class DateLapse {
     }
 
     //Getters
-
     public LocalDate getFrom() {
         return this.from;
     }

@@ -9,6 +9,18 @@ public class ClienteDeCorreo {
         this.carpetas.add(inbox);
     }
 
+    //Getter
+    public List<Carpeta> getCarpetas(){
+        return this.carpetas;
+    }
+
+    /*
+    El siguiente metodo agrega una carpeta recibida por parametro al cliente
+     */
+    public void addCarpeta(Carpeta c){
+        this.carpetas.add(c);
+    }
+
     //Metodo que recibe un mail y lo guarda en la carpeta inbox
     public void recibir(Email mail){
         this.carpetas.getFirst().agregarMail(mail);
@@ -18,8 +30,10 @@ public class ClienteDeCorreo {
     Metodo que retorna el primer mail que encuentra cuyo
     titulo o cuerpo contengan un string pasado por parametro.
      */
-    public Email buscar(){
-        return null;
+    public Email buscar(String mail){
+        return this.carpetas.stream().map(c -> c.buscar(mail)).
+                filter(Objects::nonNull).findFirst().
+                orElse(null);
     }
 
     /*

@@ -16,6 +16,10 @@ public class Carpeta {
         return this.nombre;
     }
 
+    public List<Email> getEmails(){
+        return this.emails;
+    }
+
     //Metodo que agrega un mail a un carpeta
     public void agregarMail(Email mail){
         this.emails.add(mail);
@@ -33,7 +37,7 @@ public class Carpeta {
      */
     public Email buscar(String texto){
         return this.emails.stream().filter(email -> email.getTitulo().contains(texto) || email.getCuerpo().contains(texto)).
-                collect(Collectors.toList()).getFirst();
+                findFirst().orElse(null);
     }
 
     //Metodo que retorna el espacio que ocupa la carpeta
