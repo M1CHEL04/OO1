@@ -38,7 +38,16 @@ public class CuentaTest {
 
     @Test
     void TestTransferir(){
-        
+        assertTrue(cda.transferirACuenta(100,cc));
+        assertFalse(cda.transferirACuenta(100000,cc));
+        assertTrue((cc.transferirACuenta(100,cda)));
+        assertFalse(cc.transferirACuenta(100000,cda));
+    }
+
+    @Test
+    void TestDescubierto(){
+        cc.setDescubierto(200);
+        assertEquals(200,cc.getDescubierto());
     }
 
 }

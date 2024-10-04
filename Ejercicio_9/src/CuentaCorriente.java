@@ -7,6 +7,10 @@ public class CuentaCorriente extends Cuenta {
         this.descubierto=0;
     }
 
+    public void setDescubierto(double monto){
+        this.descubierto=monto;
+    }
+
     public double getDescubierto(){
         return this.descubierto;
     }
