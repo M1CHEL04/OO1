@@ -36,4 +36,11 @@ public class DateLapse2 implements DateLapseOverrall {
                 && (d.isBefore(this.getDateTo()) || d.isEqual(this.getDateTo())));
     }
 
+    /*
+    Este metodo retorna true si el parametro de tiempo del recptor se superpone
+    con el recibido por parametro
+     */
+    public boolean overlaps (DateLapse d){
+
+    }
 }

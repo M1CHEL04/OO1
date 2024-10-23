@@ -8,4 +8,7 @@ implementar una interfaz
 public interface DateLapseOverrall {
     public boolean includesDate(LocalDate d);
 
+    public boolean overlaps (DateLapse anotherDateLapse);
+
+    
 }

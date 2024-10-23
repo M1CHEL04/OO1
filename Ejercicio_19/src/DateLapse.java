@@ -35,5 +35,11 @@ public class DateLapse {
     public boolean includesDate(LocalDate d){
         return ((d.isAfter(this.from) || d.isEqual(this.from)) && (d.isBefore(this.to) || d.isEqual(this.to)));
     }
+
+    /*
+    Retorna  true si el periodo de tiempo ingresado se superpone con el
+    recibido por parametro.
+     */
+
 }
 
