@@ -19,6 +19,7 @@ public abstract class Cliente {
     }
 
     /*
+    Este metodo se tiene que hacer de esta forma o recibe un cliente tambien?
     Este metodo agrega un envio determinado a un cliente;
      */
     public void addEnvio (Envio e){
