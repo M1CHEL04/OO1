@@ -33,7 +33,8 @@ public abstract class Cliente {
     public double montoAPagar(DateLapse fechas){
         return this.misEnvios.stream()
                 .filter(envio -> fechas.includesDate(envio.getFecha()))
-                .mapToDouble(envio -> envio.monto()).sum();
+                .mapToDouble(envio -> envio.monto()).sum() * this.descuento();
     }
 
+    public abstract double descuento ();
 }

@@ -12,4 +12,7 @@ public class Corporativo extends Cliente {
         return this.cuit;
     }
 
+    public double descuento(){
+        return 1;
+    }
 }
