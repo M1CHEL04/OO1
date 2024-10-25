@@ -40,10 +40,10 @@ public class DateLapse2 {
     Este metodo retorna true si el parametro de tiempo del recptor se superpone
     con el recibido por parametro
      */
-    public boolean overlaps (DateLapse lapso) {
-        return ((lapso.includesDate(from)
-                || lapso.includesDate(getDateTo())
-                || (includesDate(lapso.getFrom())
-                || includesDate(lapso.getTo()))));
-    }
+   public boolean overlaps (DateLapse lapso) {
+       return ((lapso.includesDate(from)
+               || lapso.includesDate(getDateTo())
+               || (includesDate(lapso.getFrom())
+               || includesDate(lapso.getTo()))));
+   }
 }
