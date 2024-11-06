@@ -1,22 +1,22 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class DateLapse {
-    private LocalDate from;
-    private LocalDate to;
+public class DateLapse implements DateLapseOverrall{
+    private LocalDate dateFrom;
+    private LocalDate dateTo;
 
     //Constructor
     public DateLapse (LocalDate inicio, LocalDate fin){
-        this.from= inicio;
-        this.to= fin;
+        this.dateFrom= inicio;
+        this.dateTo= fin;
     }
 
     //Getters
     public LocalDate getFrom() {
-        return this.from;
+        return this.dateFrom;
     }
-    public LocalDate getTo() {
-        return this.to;
+    public LocalDate getDateTo() {
+        return this.dateTo;
     }
 
     /*
@@ -25,7 +25,7 @@ public class DateLapse {
     si se usa un int se puede generar desbordamiento.
      */
     public int sizeInDays(){
-        return (int) ChronoUnit.DAYS.between(this.from,this.to);
+        return (int) ChronoUnit.DAYS.between(this.dateFrom,this.dateTo);
     }
 
     /*
@@ -33,13 +33,18 @@ public class DateLapse {
     del lapso de tiempo
      */
     public boolean includesDate(LocalDate d){
-        return ((d.isAfter(this.from) || d.isEqual(this.from)) && (d.isBefore(this.to) || d.isEqual(this.to)));
+        return ((d.isAfter(this.dateFrom) || d.isEqual(this.dateFrom)) && (d.isBefore(this.dateTo) || d.isEqual(this.dateTo)));
     }
 
     /*
-    Retorna  true si el periodo de tiempo ingresado se superpone con el
-    recibido por parametro.
+    Este metodo retorna true si el parametro de tiempo del recptor se superpone
+    con el recibido por parametro
      */
-
+    public boolean overlaps (DateLapse lapso) {
+        return ((lapso.includesDate(dateFrom)
+                || lapso.includesDate(getDateTo())
+                || (includesDate(lapso.getFrom())
+                || includesDate(lapso.getDateTo()))));
+    }
 }
 

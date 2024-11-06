@@ -26,6 +26,9 @@ public class Propiedad {
      */
     public void crearReserva(DateLapse2 lapso){
         Reserva r = new Reserva(lapso,lapso.getSizeInDays() * this.precioXNoche);
+        if (){
+            rese
+        }
         this.misReservas.add(r);
     }
 

@@ -1,19 +1,19 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class DateLapse2 {
-    private LocalDate from;
+public class DateLapse2 implements DateLapseOverrall {
+    private LocalDate dateFrom;
     private int sizeInDays;
 
     //Constructor
     public DateLapse2(LocalDate desde, int cantDias){
-        this.from = desde;
+        this.dateFrom = desde;
         this.sizeInDays = cantDias;
     }
 
     //Getters
-    public LocalDate getFrom() {
-        return from;
+    public LocalDate getDateFrom() {
+        return dateFrom;
     }
     public int getSizeInDays() {
         return sizeInDays;
@@ -24,7 +24,7 @@ public class DateLapse2 {
     teniendo en cuenta la cantidad de dias que pasaron
      */
     public LocalDate getDateTo(){
-        return this.from.plus(this.sizeInDays,ChronoUnit.DAYS);
+        return this.dateFrom.plus(this.sizeInDays,ChronoUnit.DAYS);
     }
 
     /*
@@ -32,7 +32,7 @@ public class DateLapse2 {
     o no en el rango de tiempo.
      */
     public boolean includesDate(LocalDate d){
-        return ((d.isAfter(this.from) || d.isEqual(this.from))
+        return ((d.isAfter(this.dateFrom) || d.isEqual(this.dateFrom))
                 && (d.isBefore(this.getDateTo()) || d.isEqual(this.getDateTo())));
     }
 
@@ -41,9 +41,9 @@ public class DateLapse2 {
     con el recibido por parametro
      */
     public boolean overlaps (DateLapse lapso) {
-        return ((lapso.includesDate(from)
+        return ((lapso.includesDate(dateFrom)
                 || lapso.includesDate(getDateTo())
                 || (includesDate(lapso.getFrom())
-                || includesDate(lapso.getTo()))));
+                || includesDate(lapso.getDateTo()))));
     }
 }
