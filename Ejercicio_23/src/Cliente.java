@@ -21,6 +21,7 @@ public class Cliente extends Persona {
     public boolean addPedido(FormaDePago fP, MetodoEnvio mE,Producto p, int cant, Vendedor v){
         if (p.hayStock(cant)){
             Pedido pedido = new Pedido(v,cant,p,fP,mE);
+            p.disminuirStock(cant);
             this.pedidos.add(pedido);
             return true;
         }else {

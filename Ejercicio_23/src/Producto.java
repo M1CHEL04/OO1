@@ -33,4 +33,11 @@ public class Producto {
     public boolean hayStock(int cant){
         return this.stock >= cant;
     }
+
+    /*
+    Este metodo descuenta la cantidad de productos indicada al stock
+     */
+    public int disminuirStock(int cant){
+        return this.stock - cant;
+    }
 }
