@@ -17,7 +17,7 @@ public class Vacunacion extends ServicioMedico{
     public double calcularCostoServicio(){
         double costo = this.getVeterinario().getHonorarios() +
                 500 + this.costoVacuna;
-        if (this.esDomingo(this.getFechaDeAtencion())){
+        if (this.esDomingo()){
             costo+=200;
         }
         return costo;

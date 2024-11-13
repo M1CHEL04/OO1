@@ -36,7 +36,7 @@ public abstract class ServicioMedico extends Servicio {
     /*
     Este metodo retorna si la fecha recibida es un domingo o no
      */
-    public boolean esDomingo(LocalDate fecha){
-        return fecha.getDayOfWeek() == DayOfWeek.SUNDAY;
+    public boolean esDomingo(){
+        return this.fechaDeAtencion.getDayOfWeek() == DayOfWeek.SUNDAY;
     }
 }

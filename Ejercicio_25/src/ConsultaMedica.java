@@ -14,7 +14,7 @@ public class ConsultaMedica extends ServicioMedico{
     public double calcularCostoServicio(){
         double costo = this.getVeterinario().getHonorarios() +
                 300 + this.getVeterinario().calcularAntiguedad() * 100;
-        if (this.esDomingo(this.getFechaDeAtencion())){
+        if (this.esDomingo()){
             costo+= 200;
         }
         return costo;

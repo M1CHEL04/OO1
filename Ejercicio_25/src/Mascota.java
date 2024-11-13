@@ -24,29 +24,29 @@ public class Mascota {
     /*
     Este metodo recibe un medico y crea una consulta medica para esta mascota
      */
-    public LocalDate darAltaConsultaMedica(Medico veterinario){
+    public ConsultaMedica darAltaConsultaMedica(Medico veterinario){
         ConsultaMedica consulta = new ConsultaMedica(this,veterinario,LocalDate.now());
         this.servicios.add(consulta);
-        return LocalDate.now();
+        return consulta;
     }
 
     /*
     Este metodo recibe un medico, una vacuna y su costo. Para crear un vacunacion para
     esta mascota
      */
-    public LocalDate darAltaVacunacion(Medico veterinario,String vacuna, double costoVacuna){
+    public Vacunacion darAltaVacunacion(Medico veterinario,String vacuna, double costoVacuna){
         Vacunacion vacunacion = new Vacunacion(this,veterinario,LocalDate.now(),vacuna,costoVacuna);
         this.servicios.add(vacunacion);
-        return LocalDate.now();
+        return vacunacion;
     }
 
     /*
     Este metodo recibe una cantidad de dias y crea una servicio de guarderia para esta mascota
      */
-    public LocalDate darAltaGuarderia(int cantDias){
+    public Guarderia darAltaGuarderia(int cantDias){
         Guarderia guarderia = new Guarderia(this,cantDias,LocalDate.now());
         this.servicios.add(guarderia);
-        return LocalDate.now();
+        return guarderia;
     }
 
     /*
