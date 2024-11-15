@@ -57,4 +57,11 @@ public class Mascota {
                 .mapToDouble(s -> s.calcularCostoServicio())
                 .sum();
     }
+
+    /*
+    Este metodo retorna un booleano si posee bonificacion o no la mascota ( 5 o mas servicios )
+     */
+    public boolean tieneBonificacion(){
+        return this.servicios.size() >= 5;
+    }
 }

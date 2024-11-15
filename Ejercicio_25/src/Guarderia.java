@@ -21,7 +21,7 @@ public class Guarderia extends Servicio{
      */
     public double calcularCostoServicio(){
         double costo = this.lapso.getSizeInDays() * 500;
-        if(this.getMascota().getServicioMedicos().size() >= 5){
+        if(this.getMascota().tieneBonificacion()){
             costo = costo * 0.9;
         }
         return costo;
