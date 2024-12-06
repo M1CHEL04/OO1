@@ -23,13 +23,9 @@ public class Pasajero extends Usuario{
     cargar saldo
      */
     public double comision(){
-        Viaje via = this.misViajes.stream().filter( v -> v.fueEnHace30Dias())
-                .findFirst().orElse(null);
-        if (via != null){
-            return 0;
-        }else {
-            return 0.1;
-        }
+        return  this.misViajes.stream().filter( v -> v.fueEnHace30Dias())
+                .findFirst().orElse(null) != null ? 0 : 0.1 ;
+
     }
 
     /*
