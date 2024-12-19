@@ -21,10 +21,10 @@ public class Entrada {
     public double montoRetorna(){
         double monto = 0;
         if (seguro){
-            monto+=this.evento.getPrecioFinal() * 0.15;
+            monto+=this.precio * 0.15;
         }
         if (evento.getDiferenciaDias() >= 30){
-            monto+=this.evento.getPrecioFinal() * 0.50;
+            monto+=this.precio * 0.50;
         }
         return monto;
     }
